@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="previewsize_xxs">10</integer>
+    <integer name="previewsize_xs">20</integer>
+    <integer name="previewsize_s">30</integer>
+    <integer name="previewsize_m">40</integer>
+    <integer name="previewsize_l">50</integer>
+    <integer name="previewsize_xl">60</integer>
+    <integer name="previewsize_xxl">70</integer>
+
+</resources>
