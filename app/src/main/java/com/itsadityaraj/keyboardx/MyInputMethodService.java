@@ -54,15 +54,26 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                     } else {
                         inputConnection.commitText("", 1);
                     }
+                    break;
                 case Keyboard.KEYCODE_SHIFT:
-                    if(mKeyboardState == R.integer.keyboard_symbol)
-                    {
-                        keyboardView.setKeyboard(keyboard3);
+                  if(mKeyboardState == R.integer.keyboard_normal)
+                   {
+                       caps = !caps;
+                       keyboard.setShifted(caps);
+                       keyboardView.invalidateAllKeys();
+                       //keyboardView.setKeyboard(keyboard3);
                     }
                     else {
-                        caps = !caps;
-                        keyboard.setShifted(caps);
-                        keyboardView.invalidateAllKeys();
+                            if(mKeyboardState == R.integer.keyboard_symbol)
+                            {
+                                keyboardView.setKeyboard(keyboard2);
+                                mKeyboardState = R.integer.keyboard_symbol2;
+                            }
+                            else
+                            {
+                                keyboardView.setKeyboard(keyboard3);
+                                mKeyboardState = R.integer.keyboard_symbol;
+                            }
                     }
                     break;
                 case Keyboard.KEYCODE_DONE:
